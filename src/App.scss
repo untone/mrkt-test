@@ -1,0 +1,415 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-size-adjust: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-height: 999999px;
+}
+
+a,
+article,
+aside,
+audio,
+blockquote,
+body,
+canvas,
+datalist,
+details,
+fieldset,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+img,
+input,
+label,
+legend,
+li,
+mark,
+menu,
+meter,
+nav,
+ol,
+output,
+p,
+progress,
+section,
+span,
+time,
+ul,
+video {
+  margin: 0;
+  padding: 0;
+  text-size-adjust: none;
+  max-height: 999999px
+}
+
+article,
+aside,
+audio,
+canvas,
+datalist,
+details,
+figure,
+footer,
+header,
+hgroup,
+mark,
+menu,
+meter,
+nav,
+output,
+progress,
+section,
+time,
+video {
+  display: block
+}
+
+.app {
+  position: relative;
+  z-index: 2;
+
+  &Container {
+    font-family: Tahoma, Roboto, Helvetica, sans-serif;
+    min-width: 320px;
+    font-size: 14px;
+    line-height: 1.43em;
+    padding: 61px 0 0;
+    background: #fff
+  }
+}
+
+
+.signin {
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  padding: 30px 0 90px;
+  display: flex;
+  width: 100%;
+  min-height: 90vh;
+  min-height: calc(100vh - 94px);
+  opacity: 0;
+  transition: transform .25s ease-in-out, opacity .2s ease-out;
+
+  &.is-ready {
+    transform: none;
+    opacity: 1
+  }
+
+  &-redirectMessage {
+    padding-top: 10px
+  }
+
+  &-content {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 5px 25px hsla(0, 0%, 84.3%, .5);
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    font-size: 14px;
+    border-radius: 3px;
+    margin: 100px auto auto;
+    max-width: 342px;
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box
+  }
+
+  &-register {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #362d90;
+    cursor: pointer
+
+    &:hover {
+      color: #b00
+    }
+
+    &:active {
+      color: #b00;
+      opacity: .7
+    }
+  }
+
+  &-main {
+    padding-bottom: 5px
+  }
+
+  &-bottom {
+    position: relative;
+    border-top: 2px solid #e0e0e0;
+    margin: 0 -12px;
+    padding: 15px 12px 23px
+  }
+
+  &-row, &-sent {
+    position: relative;
+    display: block
+  }
+
+  &-sent {
+    background: #f8f8f8;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    margin: 15px 0 20px;
+    padding: 5px 10px;
+    display: block;
+    box-sizing: border-box
+  }
+
+  &-remind {
+    color: #666;
+    position: absolute;
+    bottom: 7px;
+    font-size: 14px;
+    right: 10px;
+
+    &.active {
+      color: #362d90;
+      cursor: pointer;
+
+      &:hover {
+        color: #b00
+      }
+
+      &:active {
+        color: #b00;
+        opacity: .7
+      }
+    }
+  }
+
+  &-error {
+    color: #b00;
+    display: block;
+    padding: 3px 0 0
+  }
+
+  &-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 50
+  }
+
+  &-loader .loader {
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    padding: 10px;
+    background: #fff;
+    left: 50%;
+    margin-left: -40px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .1)
+  }
+
+  & .input {
+    margin: 15px 0 20px
+  }
+
+  &-welcome {
+    text-align: center;
+  }
+
+  @media (max-width:1000px) {
+    & {
+      padding-left: 10px;
+      padding-right: 10px
+    }
+  }
+
+  @media (max-width:580px) {
+    &-content {
+      margin: 30px auto auto
+    }
+  }
+}
+
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+.input {
+  &,
+  &-label {
+    display: block
+  }
+
+  &-label {
+    font-size: 14px;
+    color: #000;
+    padding-bottom: 5px
+  }
+
+  &-wrapper {
+    position: relative;
+    display: block
+  }
+
+  &-field {
+    box-shadow: none;
+    -webkit-appearance: none;
+    outline: none;
+    box-sizing: border-box;
+    background: none;
+    display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    transition: border-color .2s;
+    padding: 0 10px 2px;
+    background: #fff
+  }
+
+  &-field:focus {
+    border-color: #cacaca
+  }
+
+  &-field:disabled {
+    background: #f8f8f8;
+    color: #000;
+    -webkit-text-fill-color: #000;
+    -webkit-opacity: 1;
+    opacity: 1
+  }
+
+  &-field.has-error,&-field.is-error,&-field.is-invalid {
+    border-color: rgba(187,0,0,.6)
+  }
+
+  &-field.is-flickering {
+    -webkit-animation: flickText 1s;
+    animation: flickText 1s
+  }
+
+  & textarea {
+    resize: none;
+    min-height: 34px;
+    padding: 7px 10px;
+    height: auto;
+    box-sizing: border-box;
+    font-family: Tahoma,Roboto,Helvetica,sans-serif
+  }
+
+  &.is-error &-label,&.is-invalid &-label {
+    color: #b00
+  }
+
+  &.is-error &-field,&.is-invalid &-field {
+    border-color: rgba(187,0,0,.25)
+  }
+
+  &-focus {
+    display: none
+  }
+
+  &.is-size-s,&.is-size-s &-field {
+    display: inline-block;
+    width: auto;
+    min-width: 0
+  }
+
+  &.is-size-s &-field {
+    height: 18px;
+    font-size: 12px;
+    padding: 2px;
+    max-width: 100%
+  }
+}
+
+
+.btn {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-family: Tahoma,Roboto,Helvetica,sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 3px;
+  line-height: 1em;
+  padding: 4px 10px 5px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    box-shadow: inset 0 3px 3px rgba(0,0,0,.05)
+  }
+
+  &.is-capitel {
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding-top: 5px
+  }
+
+  &.has-no-hover {
+    cursor: default;
+    pointer-events: none
+  }
+
+  &--big {
+    font-size: 16px
+  }
+
+  &--big,
+  &--large {
+    padding: 10px 20px 12px;
+    line-height: 1em;
+    border-radius: 3px
+  }
+
+  &--large {
+    font-size: 24px
+  }
+
+  &--blue {
+    color: #fff;
+    background: #362d90
+  }
+
+  &--blue:active,
+  &--blue:hover {
+    background: #3a34b0
+  }
+
+  &--blue:active {
+    box-shadow: inset 0 3px 3px rgba(0,0,0,.2)
+  }
+
+  &[disabled] {
+    background-color: #666;
+    opacity: .7;
+    cursor: default;
+    pointer-events: none;
+    transition: background-color .15s;
+  }
+
+}

@@ -69,7 +69,6 @@ class Signin extends Component {
                   <span className='input-wrapper'>
                     <input
                       className='input-field'
-                      autoComplete='off'
                       name='login'
                       type='text'
                       required
@@ -87,7 +86,6 @@ class Signin extends Component {
                   <span className='input-wrapper'>
                     <input
                       className='input-field'
-                      autoComplete='off'
                       name='password'
                       type={passwordReset ? 'text' : 'password'}
                       required
